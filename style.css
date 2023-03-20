@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+main {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    font-family: 'Questrial', sans-serif;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(243, 243, 243);
+    aspect-ratio: 1;
+    object-fit: contain;
+    overflow: hidden;
+    transform: scale(1);
+    transition: 300ms ease;
+
+}
+
+img:hover{ 
+    transform: scale(1.2);
+}
+
+.imagewrapper {
+    width:100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; /*Set the wrappers overflow to hidden*/
+    text-align: center;
+    aspect-ratio: 1;
+}
+
+.main-product_container {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.left {
+    width: 65%;
+    margin: 0 auto;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(40%, 2fr)); /* Play with min-value */
+}
+
+.right {
+    text-align: center;
+    flex-basis: 40%;
+    margin-left: 50px;
+}
+
+.aside {
+    width: 100%;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 2fr)); /* Play with min-value */
+}
+
+.aside-product_container {
+    margin-top: 100px;
+}
+
+button {
+    border: none;
+    border-radius: 1px;
+    padding: 18px 24px;
+    background: #111;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    margin-bottom: 50px;
+    border: 2px solid transparent;
+    transition: 150ms ease;
+    cursor: pointer;
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255,255,255, 0) 30%,
+        rgba(255,255,255, .1),
+        rgba(255,255,255, 0) 70%
+    );
+    top: 0;
+    left: -200px;
+    animation: shine 8s infinite linear; /* Animation */
+}
+
+button:hover {
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
+}
+
+.main-product_container h1 {
+    margin: 10px 0;
+}
+
+.main-product_container h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.main-product_container h2 {
+    font-size: 1.2rem;
+}
+
+.main-product_container h4 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-product_container p {
+    margin-bottom: 20px;
+}
+
+.aside-item {
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+.aside-item h5 {
+    margin-top: 10px;
+}
+
+.aside-item img {
+    cursor: pointer;
+}
+
+.aside-item h4 {
+    margin-bottom: 10px;
+}
+
+.aside-product_container > h4 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ul {
+    text-align: left;
+    padding: 0;
+}
+
+.product-details {
+    text-align: left;
+    text-decoration: underline;
+    line-height: 1px;
+    margin-top: 40px;
+    padding: 0;
+    padding-left: -20px;
+}
+
+.scrolling-words-box {
+    height: 3rem;
+    margin: auto;
+    overflow: hidden;  
+}
+
+.scrolling-words-box ul {
+    margin: 0 0.625rem;
+    padding: 0;
+    animation: scrollUp 8s infinite;
+}
+
+.scrolling-words-box ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    list-style: none; 
+    font-size: 1.2rem;
+}
+
+/* ANIMATIONS */
+
+@keyframes scrollUp {
+    15%, 25% {
+        transform: translateY(-20%);
+    }
+    40%, 50% {
+        transform: translateY(-40%);
+    }
+    65%, 75% {
+        transform: translateY(-60%);
+    }
+    90%, 100% {
+        transform: translateY(-80%);
+    }
+}
+
+@keyframes shine {
+    0% {left: -300px}
+    20% {left: 100%}
+    100% {left: 100%}
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+
+@media only screen and (max-width: 900px) {
+    .main-product_container {
+      flex-direction: column;
+    }
+
+    .left {
+        width: 90%;
+        margin-bottom: 50px;
+    }
+
+    .aside {
+        grid-template-columns: repeat(auto-fill, minmax(40%, 2fr));
+    }
+
+    .aside-item {
+        margin-bottom: 150px;
+    }
+
+    .right {
+        margin-left: 0;
+    }
+}
